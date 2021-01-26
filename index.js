@@ -2,4 +2,12 @@
 import "./style.css";
 import QRCode from "./qrcode";
 
-QRCode.generate("MC7WrpdKVsAfRs3a10PGosewqvSe02Zs59pVyYlsDa5daHvjfw0pKOXdrhzbaXX0gK2oy1sDMR+Q9DCL3OBmnTivJbYSbF5vCFvN5JHOOP4R5aQsjROxnRh+aeLKIXh2FhWLdBMNPKdeon4VCSBzDI4I03qZiGk8xj1vVGAV/yoO8kNkCxch6I6ZF9h2TyRwxVAyUd248yAimetIt/54QvWbVM4DE2uypqqjEVPNpMeSC0X/JEtx5aOVCKEtkdPFIbHLw7oALw1HiAmo8sTYjviezKcr5Vtnl3smeJQFGq4N8x1TdvO6B9bv3/PLpVPG1gwrYx3WyKUdWL8Ld5SWPphu14LU6hpDWMVgu225rHJq/hbzKshoA72SPZs5vb5C+NoaDAKZXMYPgoUodsAFlUn3UCEOYHMHcjVBWGohunrQwOYRjwuFA5iVIXYvS7izjgpxoNGhlFHcM1WkuZmt58iP7ZPBUsJtNiibwof5I4h9yFITf/n4oHNQK9PuFt7+Qsfwv98D6bkQkwYSHwUi5J/clYs27gNmryl/G4hIWLkTQkEPnTy6CY99sUFjKkvCqARtlR/L48cRX+nkpZQuAF9z1+AerO2nsvs4AcvC0luLcEkZ4INDFcdkvN7VnsCwtjtTQeOx60dYAKzrIoCdTty68Z76qIm3kooO/ePtKx4=");
+function generate() {
+  QRCode.generate({
+    content: document.getElementById("content").value,
+    width: document.getElementById("width").value
+  });
+}
+
+generate();
+window.generate = generate;

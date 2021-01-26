@@ -1,15 +1,15 @@
 var QRCode = require("qrcode");
 
-exports.generate = function generate(code) {
+exports.generate = function generate({ content, width }) {
   var opts = {
-  type: 'image/jpeg',
-  width: 109,
-  margin: 0
-}
-  return QRCode.toCanvas(code, opts, function(err, canvas) {
+    type: "image/jpeg",
+    width: width,
+    margin: 0
+  };
+  return QRCode.toCanvas(content, opts, function(err, canvas) {
     if (err) throw err;
 
     var container = document.getElementById("app");
-    container.appendChild(canvas);
+    container.innerHTML = `<img src=${canvas.toDataURL()}>`;
   });
 };
